@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Solauncher</string>
+    <string name="action_settings">Настройки</string>
+    <string name="next">Далее</string>
+    <string name="welcome_to_my_app">Добро пожаловать</string>
+    <string name="welcome2_text">Простой и элегантный лаунчер</string>
+    <string name="welcome3_text">Выберите тему</string>
+    <string name="delete">Удалить</string>
+    <string name="info">Инфо</string>
+
+    <string name="invalid_apps_number">Некорректное количество приложений</string>
+
+
+    <string name="light_theme_string">Светлая тема</string>
+    <string name="dark_theme_string">Темная тема</string>
+    <string name="choose_grid_size">Выберите размер сетки</string>
+    <string name="standard_size">Стандартный размер(4:6)</string>
+    <string name="large_size">Большой размер(5:7)</string>
+    <string name="enter_app_number">Введите количество приложений</string>
+    <string name="type_here">Вводить здесь</string>
+    <string name="all_apps">Все</string>
+    <string name="popular_apps">Популярные</string>
+    <string name="new_apps">Новые</string>
+</resources>

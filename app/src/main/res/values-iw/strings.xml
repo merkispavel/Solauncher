@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Solauncher</string>
+    <string name="action_settings">הגדרות</string>
+    <string name="next">הבא</string>
+    <string name="welcome_to_my_app">ברוך הבא</string>
+    <string name="welcome2_text">פשוט ואלגנטי משגר</string>
+    <string name="welcome3_text">בחר ערכת נושא</string>
+    <string name="delete">מחק</string>
+    <string name="info">מידע</string>
+
+    <string name="invalid_apps_number">חוקי המספר של יישומים</string>
+
+
+    <string name="light_theme_string">אור ערכת נושא</string>
+    <string name="dark_theme_string">כהה נושא</string>
+    <string name="choose_grid_size">בחר גודל רשת</string>
+    <string name="standard_size">בגודל רגיל(4:6)</string>
+    <string name="large_size">גודל גדול(5:7)</string>
+    <string name="enter_app_number">הזן מספר של יישומים</string>
+    <string name="type_here">הקלד כאן</string>
+    <string name="all_apps">הכל</string>
+    <string name="popular_apps">פופולרי</string>
+    <string name="new_apps">חדש</string>
+</resources>

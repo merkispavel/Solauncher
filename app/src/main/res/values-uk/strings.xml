@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Solauncher</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="next">Далі</string>
+    <string name="welcome_to_my_app">Ласкаво просимо</string>
+    <string name="welcome2_text">Простий і елегантний лаунчер</string>
+    <string name="welcome3_text">Вибрати тему</string>
+    <string name="delete">Видалити</string>
+    <string name="info">Інформація</string>
+
+    <string name="invalid_apps_number">неприпустиме число додатків</string>
+
+
+    <string name="light_theme_string">тема</string>
+    <string name="dark_theme_string">тема</string>
+    <string name="choose_grid_size">вибрати сітку Розмір екрану</string>
+    <string name="standard_size">стандартний розмір(4:6)</string>
+    <string name="large_size">великий розмір(5:7)</string>
+    <string name="enter_app_number">введіть число додатків</string>
+    <string name="type_here">тут</string>
+    <string name="all_apps">всі</string>
+    <string name="popular_apps">популярні</string>
+    <string name="new_apps">Новий</string>
+</resources>
