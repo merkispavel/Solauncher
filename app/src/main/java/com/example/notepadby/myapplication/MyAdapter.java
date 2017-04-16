@@ -34,7 +34,7 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     view.setScaleY(4/5f);
                 }
 
-                return new MyViewHolder(view);
+                return new AppViewHolder(view);
             case ITEM_TYPE_HEADER:
                 layoutIdForListItem = R.layout.group_name_line;
                 inflater = LayoutInflater.from(context);
@@ -52,7 +52,7 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final int itemType = getItemViewType(position);
         if (itemType == ITEM_TYPE_NORMAL) {
-            ((MyViewHolder)holder).setContent(position);
+            ((AppViewHolder)holder).setContent(position);
         } else if (itemType == ITEM_TYPE_HEADER) {
             ((GroupNameViewHolder)holder).setHeaderText(position);
         }
@@ -73,10 +73,8 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return AppManager.size();
     }
 
-    /**
-     * Реализация класса ViewHolder, хранящего ссылки на виджеты.
-     */
-    class MyViewHolder extends RecyclerView.ViewHolder
+    
+    class AppViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener,  View.OnCreateContextMenuListener,
             MenuItem.OnMenuItemClickListener {
         private TextView name;
@@ -92,16 +90,16 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         void setContent(int pos) {
             int columns = DataOwner.getColumns();
-            Pair<String, Integer> element;
+            AppDetail app;
             if (pos <= columns) {
-                element = AppManager.getPopularApp(pos - 1);
+                app = AppManager.getPopularApp(pos - 1);
             } else if (pos < 2 * (columns + 1)) {
-                element = AppManager.getNewApp(pos - columns - 2);
+                app = AppManager.getNewApp(pos - columns - 2);
             } else {
-                element = AppManager.getApp(pos - 2 * (columns + 1) - 1);
+                app = AppManager.getApp(pos - 2 * (columns + 1) - 1);
             }
-            name.setText(element.first);
-            image.setImageResource(element.second);
+            name.setText(app.getName());
+            image.setImageDrawable(app.getIcon());
         }
 
         @Override
@@ -109,15 +107,13 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Toast.makeText(name.getContext(), name.getText(), Toast.LENGTH_SHORT).show();
         }
 
-        MyViewHolder(View itemView) {
+        AppViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
             name = (TextView) itemView.findViewById(R.id.recycler_view_text);
             image = (ImageView) itemView.findViewById(R.id.recycler_view_image);
         }
-
-
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
@@ -135,7 +131,6 @@ class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     private class GroupNameViewHolder extends RecyclerView.ViewHolder {
-
         private TextView name;
 
         GroupNameViewHolder(View view) {

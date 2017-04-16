@@ -1,7 +1,9 @@
 package com.example.notepadby.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -26,6 +28,7 @@ public class WelcomePageActivity extends FragmentActivity {
     public static final String LARGE_GRID_SIZE_ARG = "large_size";
     public static final String LIGHT_THEME_ARG = "light_theme";
     public static final String DARK_THEME_ARG = "dark_theme";
+    public static final String FIRST_START = "first start";
 
     private static int[] layoutId;
     private NoSwipeViewPager mPager;
@@ -37,6 +40,13 @@ public class WelcomePageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity_main);
 
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if (preferences.getBoolean(FIRST_START, false)) {
+            Intent startMainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+//            startMainActivityIntent.putExtras(arguments);
+            startActivity(startMainActivityIntent);
+        }
+        preferences.edit().putBoolean(FIRST_START, true).apply();
 
         layoutId = new int[]{R.layout.welcome1,
                             R.layout.welcome2,
